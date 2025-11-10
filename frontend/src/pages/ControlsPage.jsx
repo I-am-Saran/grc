@@ -15,6 +15,7 @@ const ControlsPage = () => {
         const res = await axios.get(`${API_BASE_URL}/controls`);
         setControls(res.data.data || []);
       } catch (err) {
+        console.error(err);
         setError("Failed to fetch controls. Please try again later.");
       } finally {
         setLoading(false);
@@ -23,13 +24,19 @@ const ControlsPage = () => {
     fetchData();
   }, [API_BASE_URL]);
 
-  if (loading) return <p className="p-4">Loading...</p>;
-  if (error) return <p className="p-4 text-red-500">{error}</p>;
-
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Security Controls Dashboard</h1>
-      <ControlsTable controls={controls} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-200 p-6">
+      <div className="max-w-[95vw] mx-auto bg-white shadow-2xl rounded-2xl p-8">
+        <h1 className="text-3xl font-bold text-blue-800 mb-6 text-center drop-shadow-sm">
+          Security Controls Dashboard
+        </h1>
+
+        {loading && (
+          <p className="text-blue-700 text-center font-medium">Loading...</p>
+        )}
+        {error && <p className="text-red-600 text-center">{error}</p>}
+        {!loading && !error && <ControlsTable controls={controls} />}
+      </div>
     </div>
   );
 };

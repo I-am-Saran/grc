@@ -30,3 +30,26 @@ th {
   background-color: #f3f4f6;
   font-weight: 600;
 }
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  color: #333;
+}
+
+/* Optional: adjust text wrap + line height to match truncation calculations */
+table td { line-height: 20px; }
+
+/* small style to make see more look subtle */
+button[role="see-more"] {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  margin-left: 6px;
+}
+
+/* If you want a nicer subtle divider on header */
+thead th { border-bottom: 1px solid rgba(255,255,255,0.08); }
