@@ -1,0 +1,32 @@
+/* Basic global reset and styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #111827;
+  line-height: 1.5;
+}
+
+h1 {
+  color: #1f2937;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
